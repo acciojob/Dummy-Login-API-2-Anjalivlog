@@ -61,7 +61,7 @@ function App() {
             value={email}
             onChange={handleEmailChange}
           />
-          {userError && <div id="user-error" style={{ color: 'red' }}>{userError}</div>}
+          <div id="user-error" style={{ color: 'red' }}>{userError}</div>
         </div>
         <div>
           <label>Password:</label>
@@ -71,7 +71,7 @@ function App() {
             value={password}
             onChange={handlePasswordChange}
           />
-          {passwordError && <div id="password-error" style={{ color: 'red' }}>{passwordError}</div>}
+          <div id="password-error" style={{ color: 'red' }}>{passwordError}</div>
         </div>
         <button id="submit-form-btn" type="submit">Login</button>
       </form>
