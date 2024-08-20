@@ -7,21 +7,32 @@ function App() {
   const [passwordError, setPasswordError] = useState('');
 
   // Predefined user data
-  const predefinedUser = {
-    email: 'user@example.com',
-    password: 'password123',
-  };
+  const predefinedUser = [
+    {
+      email: 'abc@gmail.com',
+      password: '12',
+    },
+    {
+      email: 'def@gmail.com',
+      password: '1234',
+    },
+    {
+      email: 'ghi@gmail.com',
+      password: '123456',
+    },
+  ];
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setUserError('');
     setPasswordError('');
-
-    // Simulate an asynchronous operation with a timeout of 3000 ms
+  
     setTimeout(() => {
-      if (email !== predefinedUser.email) {
+      const user = predefinedUser.find((user) => user.email === email);
+  
+      if (!user) {
         setUserError('User not found');
-      } else if (password !== predefinedUser.password) {
+      } else if (user.password !== password) {
         setPasswordError('Password Incorrect');
       } else {
         alert('Login successful');
